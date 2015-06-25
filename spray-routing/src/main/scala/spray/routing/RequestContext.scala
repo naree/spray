@@ -31,7 +31,7 @@ import MediaTypes._
  * Immutable object encapsulating the context of an [[spray.http.HttpRequest]]
  * as it flows through a ''spray'' Route structure.
  */
-case class RequestContext(request: HttpRequest, responder: ActorRef, unmatchedPath: Uri.Path) {
+case class RequestContext(request: HttpRequest, responder: ActorRef, unmatchedPath: Uri.Path, matchedParams: List[String] = List.empty) {
 
   /**
    * Returns a copy of this context with the HttpRequest transformed by the given function.
